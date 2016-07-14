@@ -1,0 +1,227 @@
+<no.agens.depth.lib.DepthRendrer xmlns:android="http://schemas.android.com/apk/res/android"
+                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                 xmlns:tools="http://schemas.android.com/tools"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="match_parent"
+                                 tools:context=".sample.WaterFragment"
+
+    >
+
+    <no.agens.depth.lib.DepthLayout
+        android:id="@+id/root_dl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layerType="hardware"
+        android:paddingTop="@dimen/appbar_height"
+        >
+
+        <no.agens.depth.BearSceneView
+            android:id="@+id/water_scene"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/bear_bg_gradient"
+            />
+    </no.agens.depth.lib.DepthLayout>
+
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+    <no.agens.depth.lib.DepthLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appbar_height"
+        android:background="@color/blue"
+        android:layerType="hardware"
+        app:edge_color="@color/black"
+        >
+
+
+        <ImageView
+
+            android:id="@+id/staturbar_bg"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:background="@color/statusbar"
+            />
+
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/ic_menu"
+            android:scaleType="centerInside"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="65dp"
+            android:text="7 Stories"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            />
+    </no.agens.depth.lib.DepthLayout>
+
+    <ImageView
+        android:id="@+id/actionbar_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbar"
+        android:background="@drawable/actionbar_shadow"
+        />
+
+    <no.agens.depth.lib.DepthLayout
+        android:id="@+id/dl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:background="@color/white"
+        android:layerType="hardware"
+        app:custom_elevation="1dp"
+        >
+
+
+
+        <TextView
+            android:layout_width="390dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_subheading_margin_top"
+            android:id="@+id/titles"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Three Sons \nand a Bundle of Sticks"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/blue"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/story"
+            android:layout_below="@+id/titles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:text="
+
+Once upon a time, an old man lived with his three sons in a village. All his three sons were hard workers. Still, none of them agreed with each other and quarrelled all the time. The old man tried a lot to unite them but he failed. While the villagers were surprised at their hard work and efforts, they also made fun of them on their fights.
+\n\nMonths passed by and the old man fell sick.
+\n\nHe talked to his sons to stay united, but none of his sons heard his words. So, he decided to teach them a practical lesson so that they would shed off their differences and stay united.
+"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/blue"
+
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/oldman"
+            android:id="@+id/fox"
+            android:layout_below="@+id/story"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/storytwo"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:layout_below="@+id/fox"
+            android:text="\n\nThe old man called as his sons. He told them, ‘I will give you a bundle of sticks. Separate each stick and you will have to break each stick into pieces of two. The one who breaks the sticks quickly will be rewarded more.’
+\n\nAll sons agreed.
+\n\nThe old man gave a bundle of 10 sticks to everyone of them and asked to break it into pieces. All the sons broke the sticks into pieces in minutes.
+\n\nAnd again they started to quarrel among themselves as who came first.
+\n\nThe old man said, ‘Dear sons, the game is not over. Now I will give another bundle of sticks to all of you. You will have to break the sticks as a bundle, not as separate sticks.’
+\n\nThe sons agreed and began to break the bundle of sticks. Unfortunately, they could not break the bundle. They tried very hard but failed to complete the task.
+\n\nAll sons said to the father about their failure.
+\n\nThe old man replied, ‘Dear sons, See! You could easily break the single sticks into pieces, but you were not able to break the bundle! The sticks were same. So, if you stay united, nobody can make any harm to you. If you quarrel every time with your brothers, anyone can easily defeat you. I request you to stay united.’
+\n\nThe three sons understood the power of unity and promised their father that whatever be the problem, they would all stay together."
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/blue"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/stoke"
+            android:layout_below="@+id/storytwo"
+            android:src="@drawable/bundle"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:id="@+id/moral"
+            android:layout_below="@+id/stoke"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="\nMoral: Unity is Strength!" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_color"
+                />
+
+
+
+
+
+
+    </no.agens.depth.lib.DepthLayout></LinearLayout>
+</ScrollView>
+
+    <no.agens.depth.lib.DepthLayout
+        android:id="@+id/dl3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="850dp"
+        android:background="@color/white"
+        android:layerType="hardware"
+        app:custom_elevation="2dp"
+        >
+
+
+
+    </no.agens.depth.lib.DepthLayout>
+
+
+    <no.agens.depth.lib.DepthLayout
+        android:id="@+id/fab_container"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginTop="232dp"
+        android:background="@drawable/circle"
+        android:layerType="hardware"
+        app:custom_elevation="6dp"
+        app:edge_color="#9A6A70"
+        app:is_circle="true"
+        >
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:src="@drawable/ic_forward"
+            app:backgroundTint="@color/fab"
+            app:rippleColor="#9A6A70" />
+    </no.agens.depth.lib.DepthLayout>
+</no.agens.depth.lib.DepthRendrer>

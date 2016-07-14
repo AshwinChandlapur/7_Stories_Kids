@@ -1,0 +1,214 @@
+<no.agens.depth.lib.DepthRendrer xmlns:android="http://schemas.android.com/apk/res/android"
+                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                 xmlns:tools="http://schemas.android.com/tools"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="match_parent"
+                                 tools:context=".sample.WaterFragment"
+                                 android:layerType="hardware"
+
+    >
+
+    <no.agens.depth.lib.DepthLayout
+        android:id="@+id/root_dl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layerType="hardware"
+        android:paddingTop="@dimen/appbar_height"
+        >
+
+        <no.agens.depth.WaterSceneView
+            android:id="@+id/water_scene"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@drawable/water_scene_background"
+            /></no.agens.depth.lib.DepthLayout>
+
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/d1">
+        <LinearLayout
+            android:id="@+id/sliders_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+    <no.agens.depth.lib.DepthLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appbar_height"
+        android:background="@color/blue"
+        android:layerType="hardware"
+        app:edge_color="@color/black"
+        >
+
+
+        <ImageView
+
+            android:id="@+id/staturbar_bg"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:background="@color/statusbar"
+            />
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+
+            android:src="@drawable/ic_menu"
+            android:scaleType="centerInside"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="65dp"
+            android:text="7 stories"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:fitsSystemWindows="true"
+            />
+    </no.agens.depth.lib.DepthLayout>
+    <ImageView
+        android:id="@+id/actionbar_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbar"
+        android:background="@drawable/actionbar_shadow"
+        />
+    <no.agens.depth.lib.DepthLayout
+        android:id="@+id/dl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:background="@color/white"
+        app:custom_elevation="1dp"
+        android:layerType="hardware"
+        >
+
+
+        <TextView
+            android:layout_width="390dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_subheading_margin_top"
+            android:id="@+id/titles"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Ant and the Grasshopper"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/blue"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/story"
+            android:layout_below="@+id/titles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:text="In a field one summer's day a Grasshopper was hopping about, chirping and singing to its heart's content. An Ant passed by, bearing along with great effort an ear of corn he was taking to the nest.
+
+\n\nWhy not come and chat with me, said the Grasshopper, instead of toiling and moiling away? I am helping to lay up food for the winter, said the Ant, and recommend you to do the same. Why bother about winter? said the Grasshopper; we have got plenty of food at present."
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/blue"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ant"
+            android:id="@+id/fox"
+            android:layout_below="@+id/story"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/storytwo"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:layout_below="@+id/fox"
+            android:text="But the Ant went on its way and continued its toil. When the winter came the Grasshopper found itself dying of hunger, while it saw the ants distributing, every day, corn and grain from the stores they had collected in the summer.
+\n\nThen the Grasshopper knew... "
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/blue"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/stoke"
+            android:layout_below="@+id/storytwo"
+            android:src="@drawable/grass"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:id="@+id/moral"
+            android:layout_below="@+id/stoke"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="\nMORAL: WORK TODAY AND YOU CAN REAP THE BENEFITS TOMORROW! " />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_color"
+                />
+
+
+
+
+
+
+    </no.agens.depth.lib.DepthLayout></LinearLayout></ScrollView>
+
+    <no.agens.depth.lib.DepthLayout
+        android:id="@+id/dl3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="850dp"
+        android:background="@color/white"
+        app:custom_elevation="2dp"
+        android:layerType="hardware"
+        >
+    </no.agens.depth.lib.DepthLayout>
+
+
+
+    <no.agens.depth.lib.DepthLayout
+        android:id="@+id/fab_container"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginTop="232dp"
+        android:background="@drawable/circle"
+        app:custom_elevation="6dp"
+        android:layerType="hardware"
+        app:edge_color="@color/fab"
+        app:is_circle="true"
+        >
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:src="@drawable/ic_forward"
+            app:backgroundTint="@color/fab"
+            app:rippleColor="@color/fab_highlight"
+            android:layerType="hardware"
+            />
+    </no.agens.depth.lib.DepthLayout>
+</no.agens.depth.lib.DepthRendrer>
