@@ -13,14 +13,24 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+
 import no.agens.depth.lib.MaterialMenuDrawable;
 
 public class WaterFragment extends Fragment implements MenuAnimation {
 
     public static final int TRANSFORM_DURATION = 900;
     private boolean introAnimate;
+    InterstitialAd mInterstitialAd;
+    private InterstitialAd interstitial;
+
+
 
     public WaterFragment() {
+
     }
 
     public void setIntroAnimate(boolean introAnimate) {
@@ -31,18 +41,49 @@ public class WaterFragment extends Fragment implements MenuAnimation {
     MaterialMenuDrawable menuIcon;
     WaterSceneView waterScene;
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
         root = inflater.inflate(R.layout.fragment_water, container, false);
+
         waterScene = (WaterSceneView) root.findViewById(R.id.water_scene);
         setupFab();
         introAnimate();
+
        // setupSeekbars();
         setupMenuButton();
+
         ((RootActivity) getActivity()).setCurretMenuIndex(0);
 
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        // Prepare the Interstitial Ad
+        interstitial = new InterstitialAd(root.getContext());
+// Insert the Ad Unit ID
+        interstitial.setAdUnitId(getString(R.string.admob_interstitial_id));
+
+        interstitial.loadAd(adRequest);
+// Prepare an Interstitial Ad Listener
+        interstitial.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+// Call displayInterstitial() function
+                displayInterstitial();
+            }
+        });
+
+
+
+
+
+
         return root;
+
+
+
     }
 
    /* private void setupSeekbars() {
@@ -189,5 +230,11 @@ public class WaterFragment extends Fragment implements MenuAnimation {
     public void exitFromMenu() {
         TransitionHelper.animateMenuOut(root);
         waterScene.setPause(true);
+    }
+    public void displayInterstitial() {
+// If Ads are loaded, show Interstitial else show nothing.
+        if (interstitial.isLoaded() && Math.random()>0.9) {
+            interstitial.show();
+        }
     }
 }

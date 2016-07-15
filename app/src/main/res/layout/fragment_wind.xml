@@ -171,7 +171,17 @@ Once upon a time, an old man lived with his three sons in a village. All his thr
             android:gravity="center"
             android:text="\nMoral: Unity is Strength!" />
 
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:id="@+id/morals"
+            android:layout_below="@+id/stoke"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="  \n\n\n \n\n" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"

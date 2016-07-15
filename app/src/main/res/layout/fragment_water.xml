@@ -1,5 +1,6 @@
 <no.agens.depth.lib.DepthRendrer xmlns:android="http://schemas.android.com/apk/res/android"
                                  xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
                                  xmlns:tools="http://schemas.android.com/tools"
                                  android:layout_width="match_parent"
                                  android:layout_height="match_parent"
@@ -21,7 +22,7 @@
             android:id="@+id/water_scene"
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:background="@drawable/water_scene_background"
+
             /></no.agens.depth.lib.DepthLayout>
 
 
@@ -62,6 +63,7 @@
             android:scaleType="centerInside"
             />
 
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -93,6 +95,7 @@
         >
 
 
+
             <TextView
                 android:layout_width="390dp"
                 android:layout_height="wrap_content"
@@ -106,6 +109,8 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 />
+
+
             <TextView
                 android:id="@+id/story"
                 android:layout_below="@+id/titles"
@@ -133,6 +138,7 @@
                 android:textColor="@color/blue"
 
                 />
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -166,16 +172,28 @@
             android:src="@drawable/stoke"
             android:layout_centerHorizontal="true"/>
         <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:id="@+id/moral"
+        android:layout_below="@+id/stoke"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="\nMoral: One bad turn begets another." />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:id="@+id/moral"
+            android:id="@+id/morals"
             android:layout_below="@+id/stoke"
             android:textAlignment="center"
             android:textSize="20dp"
             android:layout_centerHorizontal="true"
             android:gravity="center"
-            android:text="\nMoral: One bad turn begets another." />
+            android:text="  \n\n\n \n\n" />
 
 
 

@@ -14,6 +14,11 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+
 import no.agens.depth.lib.CircularSplashView;
 import no.agens.depth.lib.tween.interpolators.ExpoIn;
 import no.agens.depth.lib.tween.interpolators.QuintOut;
@@ -21,6 +26,8 @@ import no.agens.depth.lib.tween.interpolators.QuintOut;
 
 public class RootActivity extends Activity {
     Fragment currentFragment;
+    InterstitialAd mInterstitialAd;
+    private InterstitialAd interstitial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +40,16 @@ public class RootActivity extends Activity {
             getFragmentManager().beginTransaction().add(R.id.fragment_container, currentFragment).commit();
         }
         setupMenu();
+
+
+
+        AdView mAdView = (AdView) findViewById(R.id.adViews);
+        AdRequest adRequests = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequests);
+
+
+
+
     }
 
     public void setCurretMenuIndex(int curretMenuIndex) {
@@ -231,4 +248,5 @@ public class RootActivity extends Activity {
             }
         }, 2000);
     }
+
 }

@@ -12,63 +12,46 @@ import android.view.animation.LinearInterpolator;
 import no.agens.depth.lib.headers.Renderable;
 
 public class Smoke extends Renderable {
-    public static final float WIND_SENSITIVITY = 0f;
+
     float height, width;
     int numberOfTurns;
     float density;
-    private final float[] drawingVerts = new float[TOTAL_SLICES_COUNT * 2];
-    private final float[] staticVerts = new float[TOTAL_SLICES_COUNT * 2];
+    private final float[] drawingVerts = new float[1];
+    private final float[] staticVerts = new float[1];
     private static final int HORIZONTAL_SLICES = 0;
     private static final int VERTICAL_SLICES = 0;
-    private static final int TOTAL_SLICES_COUNT = (1) * (1);
 
 
-    private void createVerts() {
 
-        float xDimesion = 0;
-        float yDimesion = 0;
-
-        int index = 0;
-
-        for (int y = 0; y <= VERTICAL_SLICES; y++) {
-            float fy = yDimesion * y / VERTICAL_SLICES;
-            for (int x = 0; x <= HORIZONTAL_SLICES; x++) {
-                float fx = xDimesion * x / HORIZONTAL_SLICES;
-                setXY(drawingVerts, index, fx, fy);
-                setXY(staticVerts, index, fx, fy);
-                index += 1;
-            }
-        }
-    }
 
     public void setXY(float[] array, int index, float x, float y) {
-        array[index * 2 + 0] = x;
-        array[index * 2 + 1] = y;
+        array[index * 1 + 0] = x;
+        array[index * 1 + 0] = y;
     }
 
     public Smoke(Bitmap bitmap, float x, float y, float height, float width, int numberOfTurns, float density) {
-        super(bitmap, x, y);
-        this.height = height;
-        this.width = width;
-        this.numberOfTurns = numberOfTurns;
+        super(bitmap, 0, 0);
+        this.height = 0;
+        this.width = 0;
+        this.numberOfTurns = 1;
         paint.setStyle(Paint.Style.STROKE);
-        this.density = density;
-        createVerts();
-        createPath();
+        this.density = 1;
+       // createVerts();
+       // createPath();
 
-        pathPointOffsetAnim = ValueAnimator.ofFloat(0, ((bitmap.getHeight() / (float) numberOfTurns) * 2f) / bitmap.getHeight()).setDuration(1500);
-        pathPointOffsetAnim.setRepeatCount(ValueAnimator.INFINITE);
-        pathPointOffsetAnim.setRepeatMode(ValueAnimator.RESTART);
-        pathPointOffsetAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                pathPointOffset = (float) animation.getAnimatedValue();
-            }
-        });
-        pathPointOffsetAnim.setInterpolator(new LinearInterpolator());
-        pathPointOffsetAnim.start();
+        pathPointOffsetAnim = ValueAnimator.ofFloat(0, ((bitmap.getHeight() / (float) numberOfTurns) * 0f) / bitmap.getHeight()).setDuration(1);
+       // pathPointOffsetAnim.setRepeatCount(0);
+       // pathPointOffsetAnim.setRepeatMode(ValueAnimator.RESTART);
+       // pathPointOffsetAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+         //   @Override
+       //     public void onAnimationUpdate(ValueAnimator animation) {
+         //       pathPointOffset = (float) animation.getAnimatedValue();
+           // }
+      //  });
+       // pathPointOffsetAnim.setInterpolator(new LinearInterpolator());
+      //  pathPointOffsetAnim.start();
 
-        createPath();
+      //  createPath();
     }
 
     ValueAnimator pathPointOffsetAnim;
@@ -104,7 +87,7 @@ public class Smoke extends Renderable {
 
     public void setY(float y) {
         this.y = y;
-        createPath();
+        //createPath();
     }
 
     @Override
@@ -135,29 +118,18 @@ public class Smoke extends Renderable {
     private void matchVertsToPath(float wind) {
         PathMeasure pm = new PathMeasure(smokePath, false);
 
-        for (int i = 0; i < staticVerts.length / 2; i++) {
+        for (int i = 0; i < 1; i++) {
 
-            float yIndexValue = staticVerts[i * 2 + 1];
-            float xIndexValue = staticVerts[i * 2];
+            float yIndexValue = staticVerts[i * 0 ];
+            float xIndexValue = staticVerts[i * 0];
 
-            float percentOffsetY = (0.000001f + yIndexValue) / bitmap.getHeight();
-            float percentOffsetY2 = (0.000001f + yIndexValue) / (bitmap.getHeight() + ((bitmap.getHeight() / numberOfTurns) * 4f));
+            float percentOffsetY = (0.000001f + yIndexValue) / 1;
+            float percentOffsetY2 = (0.000001f + yIndexValue) / (bitmap.getHeight() + ((bitmap.getHeight() / numberOfTurns) * 0f));
             percentOffsetY2 += pathPointOffset;
             pm.getPosTan(pm.getLength() * (1f - percentOffsetY), coords, null);
             pm.getPosTan(pm.getLength() * (1f - percentOffsetY2), coords2, null);
 
-            if (xIndexValue == 0) {
-                float desiredXCoord = coords2[0] - (bitmap.getWidth()) / 2;
-                desiredXCoord -= (desiredXCoord - x) * percentOffsetY;
-                desiredXCoord += (wind / 3f) * density + ((wind * WIND_SENSITIVITY) * (1f - smokeExponentionWindStuff.getInterpolation(percentOffsetY)));
-                setXY(drawingVerts, i, desiredXCoord, coords[1]);
-            } else {
-                float desiredXCoord = coords2[0] + (bitmap.getWidth()) / 2;
-                desiredXCoord -= (desiredXCoord - x) * percentOffsetY;
-                desiredXCoord += (wind / 3f) * density + ((wind * WIND_SENSITIVITY) * (1f - smokeExponentionWindStuff.getInterpolation(percentOffsetY)));
-                setXY(drawingVerts, i, desiredXCoord, coords[1]);
 
-            }
         }
     }
 

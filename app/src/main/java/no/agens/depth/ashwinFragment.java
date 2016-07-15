@@ -12,12 +12,18 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 import no.agens.depth.lib.MaterialMenuDrawable;
 
 public class ashwinFragment extends Fragment implements MenuAnimation {
 
     public static final int TRANSFORM_DURATION = 900;
     private boolean introAnimate;
+    InterstitialAd mInterstitialAd;
+    private InterstitialAd interstitial;
 
     public ashwinFragment() {
     }
@@ -41,6 +47,22 @@ public class ashwinFragment extends Fragment implements MenuAnimation {
         setupMenuButton();
         ((RootActivity) getActivity()).setCurretMenuIndex(0);
 
+
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        // Prepare the Interstitial Ad
+        interstitial = new InterstitialAd(root.getContext());
+// Insert the Ad Unit ID
+        interstitial.setAdUnitId(getString(R.string.admob_interstitial_id));
+
+        interstitial.loadAd(adRequest);
+// Prepare an Interstitial Ad Listener
+        interstitial.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+// Call displayInterstitial() function
+                displayInterstitial();
+            }
+        });
         return root;
     }
 
@@ -101,6 +123,13 @@ public class ashwinFragment extends Fragment implements MenuAnimation {
         });
         menuIcon = new MaterialMenuDrawable(getActivity(), Color.WHITE, MaterialMenuDrawable.Stroke.THIN, TRANSFORM_DURATION);
         menu.setImageDrawable(menuIcon);
+    }
+    public void displayInterstitial() {
+// If Ads are loaded, show Interstitial else show nothing.
+        if (interstitial.isLoaded() && Math.random()>0.7
+                ) {
+            interstitial.show();
+        }
     }
 
     private void introAnimate() {

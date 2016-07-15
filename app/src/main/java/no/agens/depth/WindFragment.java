@@ -17,6 +17,10 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 import no.agens.depth.lib.MaterialMenuDrawable;
 
 
@@ -25,6 +29,10 @@ public class WindFragment extends Fragment implements MenuAnimation {
 
     public static final int FLAMES_INITIAL_HEIGHT = 50;
     private boolean introAnimate;
+    InterstitialAd mInterstitialAd;
+    private InterstitialAd interstitial;
+
+
 
     public WindFragment() {
     }
@@ -39,11 +47,28 @@ public class WindFragment extends Fragment implements MenuAnimation {
         root = inflater.inflate(R.layout.fragment_wind, container, false);
         bearsScene = (BearSceneView) root.findViewById(R.id.water_scene);
 
-        doIntroAnimation();
+       // doIntroAnimation();
         setupFabButton();
         setupMenuButton();
         ((RootActivity) getActivity()).setCurretMenuIndex(1);
        // setupSliders();
+
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        // Prepare the Interstitial Ad
+        interstitial = new InterstitialAd(root.getContext());
+// Insert the Ad Unit ID
+        interstitial.setAdUnitId(getString(R.string.admob_interstitial_id));
+
+        interstitial.loadAd(adRequest);
+// Prepare an Interstitial Ad Listener
+        interstitial.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+// Call displayInterstitial() function
+                displayInterstitial();
+            }
+        });
         return root;
     }
 
@@ -216,5 +241,12 @@ public class WindFragment extends Fragment implements MenuAnimation {
     public void exitFromMenu() {
         TransitionHelper.animateMenuOut(root);
         bearsScene.setPause(true);
+    }
+    public void displayInterstitial() {
+// If Ads are loaded, show Interstitial else show nothing.
+        if (interstitial.isLoaded() && Math.random()>0.7
+                ) {
+            interstitial.show();
+        }
     }
 }

@@ -21,22 +21,22 @@ public class Water extends Renderable {
 
     public Water(Bitmap bitmap, Bitmap foam, float y, float height, float width, int waves) {
         super(bitmap, 0, y);
-        this.height = height;
-        this.width = width;
+        this.height = 1;
+        this.width = 1;
         numberOfWaves = waves;
 
         debugPaint.setColor(Color.RED);
         debugPaint.setStyle(Paint.Style.STROKE);
         lastEmit = System.currentTimeMillis();
         water = new PathBitmapMesh(VERTS, 1, bitmap, 1500);
-        foams[0] = new Foam(VERTS, 1, foam, 0, height / 12, 1500);
-        foams[1] = new Foam(VERTS, 1, foam, -height / 5, height / 5, 1500);
+        foams[0] = new Foam(VERTS, 1, foam, 0, height / 120000, 1500);
+        foams[1] = new Foam(VERTS, 1, foam, -height / 500000, height / 500000, 1500);
         foams[1].setAlpha(100);
-        foams[2] = new Foam(VERTS, 1, foam, -height / 12, height / 12, 1450);
-        foams[2].setVerticalOffset(height / 7);
-        foams[3] = new Foam(VERTS, 1, foam, -height / 12, height / 12, 1400);
-        foams[3].setVerticalOffset(height / 4);
-        waveHeight = height / 10;
+        foams[2] = new Foam(VERTS, 1, foam, -height / 120000, height / 120000, 1450);
+        foams[2].setVerticalOffset(height / 70000);
+        foams[3] = new Foam(VERTS, 1, foam, -height / 120000, height / 120000, 1400);
+        foams[3].setVerticalOffset(height / 400000);
+        waveHeight = height / 1000000;
         createPath();
     }
 
@@ -99,9 +99,9 @@ public class Water extends Renderable {
         waterPath.reset();
         waterPath.moveTo(0, y);
 
-        int step = (int) (width / numberOfWaves);
+        int step = (int) (width / 1);
         boolean goLeft = true;
-        for (int i = 0; i < numberOfWaves; i++) {
+        for (int i = 0; i < 1; i++) {
             if (goLeft)
                 waterPath.cubicTo(x + step * i, y, x + step * i + step / 2f, y + waveHeight, x + step * i + step, y);
             else
@@ -114,11 +114,11 @@ public class Water extends Renderable {
 
 
     long lastEmit;
-    private int emitInterWall = 1000;
+    private int emitInterWall = 1;
 
 
     public void setWaveHeight(float waveHeight) {
-        this.waveHeight = waveHeight;
+        this.waveHeight = 0;
         createPath();
     }
 }
