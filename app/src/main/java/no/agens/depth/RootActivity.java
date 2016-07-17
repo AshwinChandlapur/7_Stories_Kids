@@ -51,12 +51,11 @@ public class RootActivity extends Activity {
 
 
     }
-
-    public void setCurretMenuIndex(int curretMenuIndex) {
-        this.curretMenuIndex = curretMenuIndex;
-    }
-
     int curretMenuIndex = 0;
+    public void setCurretMenuIndex(int curretMenuIndex) {this.curretMenuIndex = curretMenuIndex;}
+
+
+
 
     private void makeAppFullscreen() {
         getWindow().setStatusBarColor(Color.TRANSPARENT);
@@ -78,7 +77,7 @@ public class RootActivity extends Activity {
             super.onBackPressed();
     }
 
-    public void showMenu() {
+   public void showMenu() {
         isMenuVisible = true;
         ObjectAnimator translationY = ObjectAnimator.ofFloat(menu, View.TRANSLATION_Y, menu.getHeight(), 0);
         translationY.setDuration(1000);

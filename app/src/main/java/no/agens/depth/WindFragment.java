@@ -27,7 +27,7 @@ import no.agens.depth.lib.MaterialMenuDrawable;
 public class WindFragment extends Fragment implements MenuAnimation {
 
 
-    public static final int FLAMES_INITIAL_HEIGHT = 50;
+    public static final int FLAMES_INITIAL_HEIGHT = 0;
     private boolean introAnimate;
     InterstitialAd mInterstitialAd;
     private InterstitialAd interstitial;
@@ -47,7 +47,7 @@ public class WindFragment extends Fragment implements MenuAnimation {
         root = inflater.inflate(R.layout.fragment_wind, container, false);
         bearsScene = (BearSceneView) root.findViewById(R.id.water_scene);
 
-       // doIntroAnimation();
+        doIntroAnimation();
         setupFabButton();
         setupMenuButton();
         ((RootActivity) getActivity()).setCurretMenuIndex(1);

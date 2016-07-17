@@ -37,21 +37,21 @@ public class Smoke extends Renderable {
         paint.setStyle(Paint.Style.STROKE);
         this.density = 1;
        // createVerts();
-       // createPath();
+        createPath();
 
         pathPointOffsetAnim = ValueAnimator.ofFloat(0, ((bitmap.getHeight() / (float) numberOfTurns) * 0f) / bitmap.getHeight()).setDuration(1);
-       // pathPointOffsetAnim.setRepeatCount(0);
-       // pathPointOffsetAnim.setRepeatMode(ValueAnimator.RESTART);
-       // pathPointOffsetAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-         //   @Override
-       //     public void onAnimationUpdate(ValueAnimator animation) {
-         //       pathPointOffset = (float) animation.getAnimatedValue();
-           // }
-      //  });
-       // pathPointOffsetAnim.setInterpolator(new LinearInterpolator());
-      //  pathPointOffsetAnim.start();
+       pathPointOffsetAnim.setRepeatCount(0);
+        pathPointOffsetAnim.setRepeatMode(ValueAnimator.RESTART);
+        pathPointOffsetAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+              pathPointOffset = (float) animation.getAnimatedValue();
+        }
+        });
+       pathPointOffsetAnim.setInterpolator(new LinearInterpolator());
+        pathPointOffsetAnim.start();
 
-      //  createPath();
+        createPath();
     }
 
     ValueAnimator pathPointOffsetAnim;
@@ -133,5 +133,5 @@ public class Smoke extends Renderable {
         }
     }
 
-    DecelerateInterpolator smokeExponentionWindStuff = new DecelerateInterpolator(1f);
+
 }

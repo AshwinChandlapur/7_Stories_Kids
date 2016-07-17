@@ -22,10 +22,10 @@ public class TransitionHelper {
     public static final float TARGET_ROTATION = -50f;
     public static final float TARGET_ROTATION_X = 60f;
     public static final int MOVE_Y_STEP = 15;
-    public static final int DURATION = 1100;
+    public static final int DURATION = 900;
     public static final QuintOut VALUEinterpolator = new QuintOut();
 
-    public static final int FISRTDELAY = 1500;
+    public static final int FISRTDELAY = 800;
 
     public static void startIntroAnim(View root, AnimatorListenerAdapter introEndListener) {
         introAnimate((DepthLayout) root.findViewById(R.id.root_dl), 0, 30f, 15, 180);

@@ -96,19 +96,19 @@ public class BearSceneView extends View {
         float density = getResources().getDisplayMetrics().density;
         float randomXPlacement = 5f * density;
         flames = new ParticleSystem(x, y, 30, -30f * density, randomXPlacement);
-        sparks = new ParticleSystem(x, y, 600, -30f * density, randomXPlacement);
+        sparks = new ParticleSystem(x, y, 0, -30f * density, randomXPlacement);
 
         renderables[index] = flames;
-        flames.setParticleSize((int) (8f * density));
-        flames.setRandomMovementX(20f * density);
-        flames.setRandomMovementY(1.5f * density);
+        flames.setParticleSize((int) (0f * density));
+        flames.setRandomMovementX(0f * density);
+        flames.setRandomMovementY(0f * density);
         flames.setColors(getResources().getColor(R.color.fire_start_color), getResources().getColor(R.color.fire_end_color));
         index += 1;
 
         renderables[index] = sparks;
-        sparks.setParticleSize((int) (1f * density));
-        sparks.setRandomMovementX(25f * density);
-        sparks.setRandomMovementY(2.5f * density);
+        sparks.setParticleSize((int) (0f * density));
+        sparks.setRandomMovementX(0f * density);
+        sparks.setRandomMovementY(0f * density);
         sparks.setRandomMovementChangeInterval(900);
         sparks.setColors(getResources().getColor(R.color.fire_start_color), getResources().getColor(R.color.fire_start_color));
         sparks.setMinYCoord(0);
@@ -207,10 +207,10 @@ public class BearSceneView extends View {
     float HIGHEST_SMOKE_COORD = 0.0f;
 
     public void setFlamesHeight(int progress) {
-        float flamesHeight = getYCoordByPercent(LOWEST_FLAMES_COORD - ((LOWEST_FLAMES_COORD - HIGHEST_FLAMES_COORD) * ((float) progress / 100f)));
-        flames.setMinYCoord(flamesHeight);
-        float smokeYCoord = getYCoordByPercent(LOWEST_FLAMES_COORD - ((LOWEST_FLAMES_COORD - HIGHEST_SMOKE_COORD) * ((float) progress / 100f)));
-        smoke.setY(smokeYCoord);
+     //   float flamesHeight = getYCoordByPercent(LOWEST_FLAMES_COORD - ((LOWEST_FLAMES_COORD - HIGHEST_FLAMES_COORD) * ((float) progress / 100f)));
+       // flames.setMinYCoord(flamesHeight);
+        //float smokeYCoord = getYCoordByPercent(LOWEST_FLAMES_COORD - ((LOWEST_FLAMES_COORD - HIGHEST_SMOKE_COORD) * ((float) progress / 100f)));
+        //smoke.setY(smokeYCoord);
     }
 
 
