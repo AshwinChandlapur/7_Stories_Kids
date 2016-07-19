@@ -202,15 +202,15 @@ public class BearSceneView extends View {
         this.wind = wind;
     }
 
-    float LOWEST_FLAMES_COORD = 0.0f;
-    float HIGHEST_FLAMES_COORD = 0.0f;
-    float HIGHEST_SMOKE_COORD = 0.0f;
+    float LOWEST_FLAMES_COORD = 0.8f;
+    float HIGHEST_FLAMES_COORD = 0.4f;
+    float HIGHEST_SMOKE_COORD = 0.6f;
 
     public void setFlamesHeight(int progress) {
-     //   float flamesHeight = getYCoordByPercent(LOWEST_FLAMES_COORD - ((LOWEST_FLAMES_COORD - HIGHEST_FLAMES_COORD) * ((float) progress / 100f)));
-       // flames.setMinYCoord(flamesHeight);
-        //float smokeYCoord = getYCoordByPercent(LOWEST_FLAMES_COORD - ((LOWEST_FLAMES_COORD - HIGHEST_SMOKE_COORD) * ((float) progress / 100f)));
-        //smoke.setY(smokeYCoord);
+       float flamesHeight = getYCoordByPercent(LOWEST_FLAMES_COORD - ((LOWEST_FLAMES_COORD - HIGHEST_FLAMES_COORD) * ((float) progress / 100f)));
+        flames.setMinYCoord(flamesHeight);
+        float smokeYCoord = getYCoordByPercent(LOWEST_FLAMES_COORD - ((LOWEST_FLAMES_COORD - HIGHEST_SMOKE_COORD) * ((float) progress / 100f)));
+        smoke.setY(smokeYCoord);
     }
 
 

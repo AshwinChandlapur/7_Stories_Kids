@@ -12,7 +12,7 @@
         android:id="@+id/root_dl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="#2e2e2e"
         android:layerType="hardware"
         android:paddingTop="@dimen/appbar_height"
         >
@@ -57,7 +57,6 @@
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:layout_alignParentBottom="true"
-
             android:src="@drawable/ic_menu"
             android:scaleType="centerInside"
             />

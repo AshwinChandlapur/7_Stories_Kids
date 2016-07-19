@@ -45,7 +45,7 @@ public class eashwinFragment extends Fragment implements MenuAnimation {
         introAnimate();
        // setupSeekbars();
         setupMenuButton();
-        ((RootActivity) getActivity()).setCurretMenuIndex(0);
+        ((RootActivity) getActivity()).setCurretMenuIndex(6);
 
         AdRequest adRequest = new AdRequest.Builder().build();
 

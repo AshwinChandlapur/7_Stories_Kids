@@ -41,19 +41,10 @@ public class RootActivity extends Activity {
         }
         setupMenu();
 
-
-
-        AdView mAdView = (AdView) findViewById(R.id.adViews);
-        AdRequest adRequests = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequests);
-
-
-
-
     }
-    int curretMenuIndex = 0;
-    public void setCurretMenuIndex(int curretMenuIndex) {this.curretMenuIndex = curretMenuIndex;}
 
+    public void setCurretMenuIndex(int curretMenuIndex) {this.curretMenuIndex = curretMenuIndex;}
+    int curretMenuIndex = 0;
 
 
 

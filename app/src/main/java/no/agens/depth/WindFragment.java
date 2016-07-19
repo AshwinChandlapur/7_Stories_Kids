@@ -27,7 +27,7 @@ import no.agens.depth.lib.MaterialMenuDrawable;
 public class WindFragment extends Fragment implements MenuAnimation {
 
 
-    public static final int FLAMES_INITIAL_HEIGHT = 0;
+    public static final int FLAMES_INITIAL_HEIGHT = 1;
     private boolean introAnimate;
     InterstitialAd mInterstitialAd;
     private InterstitialAd interstitial;

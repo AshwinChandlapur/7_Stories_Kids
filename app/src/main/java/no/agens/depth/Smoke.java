@@ -20,8 +20,25 @@ public class Smoke extends Renderable {
     private final float[] staticVerts = new float[1];
     private static final int HORIZONTAL_SLICES = 0;
     private static final int VERTICAL_SLICES = 0;
+    private static final int TOTAL_SLICES_COUNT = (HORIZONTAL_SLICES + 1) * (VERTICAL_SLICES + 1);
 
+    private void createVerts() {
 
+        float xDimesion = (float) bitmap.getWidth();
+        float yDimesion = (float) bitmap.getHeight();
+
+        int index = 0;
+
+        for (int y = 0; y <= VERTICAL_SLICES; y++) {
+            float fy = yDimesion * y / VERTICAL_SLICES;
+            for (int x = 0; x <= HORIZONTAL_SLICES; x++) {
+                float fx = xDimesion * x / HORIZONTAL_SLICES;
+                setXY(drawingVerts, index, fx, fy);
+                setXY(staticVerts, index, fx, fy);
+                index += 1;
+            }
+        }
+    }
 
 
     public void setXY(float[] array, int index, float x, float y) {
@@ -87,7 +104,7 @@ public class Smoke extends Renderable {
 
     public void setY(float y) {
         this.y = y;
-        //createPath();
+        createPath();
     }
 
     @Override

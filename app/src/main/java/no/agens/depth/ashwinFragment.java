@@ -45,7 +45,7 @@ public class ashwinFragment extends Fragment implements MenuAnimation {
         introAnimate();
        // setupSeekbars();
         setupMenuButton();
-        ((RootActivity) getActivity()).setCurretMenuIndex(0);
+        ((RootActivity) getActivity()).setCurretMenuIndex(2);
 
 
 

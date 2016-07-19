@@ -17,19 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true">
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adViews"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:gravity="center"
-            ads:adSize="BANNER"
-            ads:adUnitId="@string/banner_ad_unit_id"
-            android:layout_gravity="center"
-            android:layout_marginBottom="0dp"
-            android:layout_marginTop="270dp">
-        </com.google.android.gms.ads.AdView>
+
     </LinearLayout>
 
     <LinearLayout

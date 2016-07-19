@@ -45,7 +45,7 @@ public class dashwinFragment extends Fragment implements MenuAnimation {
         introAnimate();
        // setupSeekbars();
         setupMenuButton();
-        ((RootActivity) getActivity()).setCurretMenuIndex(0);
+        ((RootActivity) getActivity()).setCurretMenuIndex(5);
 
         AdRequest adRequest = new AdRequest.Builder().build();
         // Prepare the Interstitial Ad

@@ -57,12 +57,12 @@ public class WaterSceneView extends View {
         Bitmap noiseScratch = BitmapFactory.decodeResource(getResources(), R.drawable.noise_scratch);
         Bitmap noiseReg = BitmapFactory.decodeResource(getResources(), R.drawable.noise);
 
-        noiseScratchEffect = new NoiseEffect(noiseScratch, 100, 2f);
+        noiseScratchEffect = new NoiseEffect(noiseScratch, 0, 0f);
         renderables[2] = noiseScratchEffect;
-        noise = new NoiseEffect(noiseReg, 30, 1.5f);
+        noise = new NoiseEffect(noiseReg, 0, 0f);
         renderables[3] = noise;
-        setNoiseIntensity(0.5f);
-        setWaveHeight(50);
+        setNoiseIntensity(0f);
+        setWaveHeight(0);
     }
 
     @Override
@@ -124,7 +124,7 @@ public class WaterSceneView extends View {
     }
 
     public void setNoiseIntensity(float noiseAmount) {
-        noiseScratchEffect.setNoiseIntensity(noiseAmount);
-        noise.setNoiseIntensity(noiseAmount);
+        //noiseScratchEffect.setNoiseIntensity(noiseAmount);
+        //noise.setNoiseIntensity(noiseAmount);
     }
 }

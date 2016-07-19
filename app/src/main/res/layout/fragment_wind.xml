@@ -4,14 +4,13 @@
                                  android:layout_width="match_parent"
                                  android:layout_height="match_parent"
                                  tools:context=".sample.WaterFragment"
-
     >
 
     <no.agens.depth.lib.DepthLayout
         android:id="@+id/root_dl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="#2e2e2e"
         android:layerType="hardware"
         android:paddingTop="@dimen/appbar_height"
         >
@@ -27,12 +26,16 @@
 
 <ScrollView
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+
+    >
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+
+        >
 
 
     <no.agens.depth.lib.DepthLayout
@@ -46,7 +49,6 @@
 
 
         <ImageView
-
             android:id="@+id/staturbar_bg"
             android:layout_width="match_parent"
             android:layout_height="24dp"

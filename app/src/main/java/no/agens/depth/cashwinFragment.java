@@ -45,7 +45,7 @@ public class cashwinFragment extends Fragment implements MenuAnimation {
         introAnimate();
        // setupSeekbars();
         setupMenuButton();
-        ((RootActivity) getActivity()).setCurretMenuIndex(0);
+        ((RootActivity) getActivity()).setCurretMenuIndex(4);
 
 
         AdRequest adRequest = new AdRequest.Builder().build();

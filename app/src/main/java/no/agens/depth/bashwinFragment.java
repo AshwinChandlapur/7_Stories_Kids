@@ -45,7 +45,7 @@ public class bashwinFragment extends Fragment implements MenuAnimation {
         introAnimate();
        // setupSeekbars();
         setupMenuButton();
-        ((RootActivity) getActivity()).setCurretMenuIndex(0);
+        ((RootActivity) getActivity()).setCurretMenuIndex(3);
 
         AdRequest adRequest = new AdRequest.Builder().build();
         // Prepare the Interstitial Ad
