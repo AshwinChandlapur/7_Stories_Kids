@@ -76,9 +76,9 @@ public class CircularSplashView extends View {
     }
 
     interface CircledDrawable {
-        public void startAnim();
+        void startAnim();
 
-        public void draw(Canvas canvas);
+        void draw(Canvas canvas);
     }
 
     public class CircleBitmapExpand implements CircledDrawable {

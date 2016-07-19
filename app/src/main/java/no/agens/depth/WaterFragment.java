@@ -138,7 +138,7 @@ public class WaterFragment extends Fragment implements MenuAnimation {
                 if (!((RootActivity) getActivity()).isMenuVisible)
                     ((RootActivity) getActivity()).showMenu();
                 else
-                    ((RootActivity) getActivity()).onBackPressed();
+                    getActivity().onBackPressed();
             }
         });
         menuIcon = new MaterialMenuDrawable(getActivity(), Color.WHITE, MaterialMenuDrawable.Stroke.THIN, TRANSFORM_DURATION);
